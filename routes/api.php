@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('/store-data', [DataController::class, 'store'])->name('storeData');
+Route::get('/get-data', [DataController::class, 'index']);

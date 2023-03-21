@@ -10,10 +10,15 @@ class DataController extends Controller
     public function store(Request $request)
     {
         $data = new Data();
-        $data->name = $request->input('name');
-        $data->email = $request->input('email');
+        $data->name = $request->input('username');
+        $data->email = $request->input('password');
         $data->save();
 
-        return redirect('/')->with('success', 'Data has been added successfully');
+        return $data;
+    }
+
+    public function index()
+    {
+        return Data::all();
     }
 }
